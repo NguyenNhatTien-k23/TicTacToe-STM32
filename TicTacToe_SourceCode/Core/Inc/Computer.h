@@ -7,7 +7,8 @@
 
 #ifndef INC_COMPUTER_H_
 #define INC_COMPUTER_H_
-
+#include "Global_Include.h"
+void test();
 
 
 #endif /* INC_COMPUTER_H_ */

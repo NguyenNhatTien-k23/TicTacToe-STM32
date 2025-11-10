@@ -6,3 +6,8 @@
  */
 
 #include "Display.h"
+void display7SEG(int num){
+
+
+
+}

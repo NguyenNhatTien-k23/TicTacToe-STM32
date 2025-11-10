@@ -5,6 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/Button.c \
+../Core/Src/Computer.c \
+../Core/Src/Display.c \
+../Core/Src/FiniteStateMachine.c \
+../Core/Src/Queue.c \
+../Core/Src/Resource_Manager.c \
+../Core/Src/Schedular.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -13,6 +20,13 @@ C_SRCS += \
 ../Core/Src/system_stm32f1xx.c 
 
 OBJS += \
+./Core/Src/Button.o \
+./Core/Src/Computer.o \
+./Core/Src/Display.o \
+./Core/Src/FiniteStateMachine.o \
+./Core/Src/Queue.o \
+./Core/Src/Resource_Manager.o \
+./Core/Src/Schedular.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -21,6 +35,13 @@ OBJS += \
 ./Core/Src/system_stm32f1xx.o 
 
 C_DEPS += \
+./Core/Src/Button.d \
+./Core/Src/Computer.d \
+./Core/Src/Display.d \
+./Core/Src/FiniteStateMachine.d \
+./Core/Src/Queue.d \
+./Core/Src/Resource_Manager.d \
+./Core/Src/Schedular.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
