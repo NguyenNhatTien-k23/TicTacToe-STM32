@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "Schedular.h"
 #include "Computer.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -84,7 +85,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
-  HAL_TIM_Base_Start_IT(&htim2);
+
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
@@ -98,7 +99,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  Schedular_Dispatch();
+
     /* USER CODE BEGIN 3 */
 
 
@@ -209,10 +210,10 @@ static void MX_GPIO_Init(void)
                           |EN8_Pin|LED_1_Pin|R_Pin|G_Pin
                           |B_Pin|EN0_Pin|EN1_Pin|EN2_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PA1 PA2 LEFT_Pin UP_Pin
-                           DOWN_Pin RIGHT_Pin */
-  GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2|LEFT_Pin|UP_Pin
-                          |DOWN_Pin|RIGHT_Pin;
+  /*Configure GPIO pins : BUTTON_SELECT_Pin BUTTON_SWITCH_Pin BUTTON_LEFT_Pin BUTTON_UP_Pin
+                           BUTTON_DOWN_Pin BUTTON_RIGHT_Pin */
+  GPIO_InitStruct.Pin = BUTTON_SELECT_Pin|BUTTON_SWITCH_Pin|BUTTON_LEFT_Pin|BUTTON_UP_Pin
+                          |BUTTON_DOWN_Pin|BUTTON_RIGHT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

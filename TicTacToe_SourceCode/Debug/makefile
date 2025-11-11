@@ -64,8 +64,8 @@ all: main-build
 main-build: TicTacToe_SourceCode.elf secondary-outputs
 
 # Tool invocations
-TicTacToe_SourceCode.elf: $(OBJS) $(USER_OBJS) C:\MCU\TICTACTOE\TicTacToe_SourceCode\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TicTacToe_SourceCode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\MCU\TICTACTOE\TicTacToe_SourceCode\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TicTacToe_SourceCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TicTacToe_SourceCode.elf: $(OBJS) $(USER_OBJS) C:\Users\Hi\Documents\STM32-Project\TicTacToe-Project\TicTacToe_SourceCode\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TicTacToe_SourceCode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Hi\Documents\STM32-Project\TicTacToe-Project\TicTacToe_SourceCode\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TicTacToe_SourceCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

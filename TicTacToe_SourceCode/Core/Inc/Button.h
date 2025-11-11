@@ -16,15 +16,16 @@
 /**
  * Define button index
  */
-#define BUTTON_UP 0
-#define BUTTON_LEFT 1
-#define BUTTON_DOWN 2
-#define BUTTON_RIGHT 3
 
-#define BUTTON_SELECT 4
-#define BUTTON_SWITCH 5
+#define BUTTON_SELECT 0
+#define BUTTON_SWITCH 1
 
-#define TIME_FOR_HOLD_CHECK 3000	//ms	//Only be used for reseting via holding select_button
+#define BUTTON_UP 2
+#define BUTTON_LEFT 3
+#define BUTTON_DOWN 4
+#define BUTTON_RIGHT 5
+
+#define TIME_FOR_HOLD_CHECK 300	//ms	//Only be used for reseting via holding select_button
 
 typedef struct {
 	uint8_t button_id;
@@ -32,7 +33,6 @@ typedef struct {
 	GPIO_PinState internal_state;
 
 	int32_t internal_timer;		//This need to be signed so we can check if it's negative
-	uint32_t previous_read_time;
 
 	uint8_t is_pressed;
 	uint8_t is_hold;

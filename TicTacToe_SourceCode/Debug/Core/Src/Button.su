@@ -1,0 +1,4 @@
+Button.c:15:6:Button_ReadInput	16	static
+Button.c:52:6:Button_Init	16	static
+Button.c:70:9:Button_IsPressed	16	static
+Button.c:77:9:Button_IsHeld	16	static
