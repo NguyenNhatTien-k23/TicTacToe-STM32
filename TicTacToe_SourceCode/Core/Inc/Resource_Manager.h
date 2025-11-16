@@ -43,8 +43,6 @@ typedef struct{
 	GameInfo game_info;
 
 	uint8_t running;		//Function only run when running == 1
-
-	uint8_t
 }Game;
 
 GameBoard GetGameBoard();
@@ -52,6 +50,8 @@ GameInfo GetGameInfo();
 
 /**
  * Position for input can be change depend on the UI side.
+ * Index
+ * Bitmap
  */
 void InputMove(uint8_t pos_i, uint8_t pos_j, uint8_t side);
 
@@ -60,5 +60,6 @@ void InputMove(uint8_t pos_i, uint8_t pos_j, uint8_t side);
  */
 void UpdateGameBoard();
 
+void ResetBoard();
 
 #endif /* INC_RESOURCE_MANAGER_H_ */

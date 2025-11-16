@@ -16,4 +16,6 @@
  * 	+ Only the function in this class is called periodically
  */
 
+void GameUpdate();
+
 #endif /* INC_GAME_MASTER_H_ */
