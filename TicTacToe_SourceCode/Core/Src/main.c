@@ -19,8 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "Schedular.h"
-#include "Computer.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -90,8 +89,8 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  Schedular_Init();
-  Schedular_AddTask(test, 1000, 2000);
+//  Schedular_Init();
+//  Schedular_AddTask(test, 1000, 2000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -101,7 +100,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 
   }
   /* USER CODE END 3 */
@@ -197,8 +196,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, SEG_A_Pin|SEG_B_Pin|SEG_C_Pin|SEG_D_Pin
@@ -209,6 +212,13 @@ static void MX_GPIO_Init(void)
                           |EN4_Pin|EN5_Pin|EN6_Pin|EN7_Pin
                           |EN8_Pin|LED_1_Pin|R_Pin|G_Pin
                           |B_Pin|EN0_Pin|EN1_Pin|EN2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : BUTTON_SELECT_Pin BUTTON_SWITCH_Pin BUTTON_LEFT_Pin BUTTON_UP_Pin
                            BUTTON_DOWN_Pin BUTTON_RIGHT_Pin */
@@ -244,7 +254,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	Schedular_Update();
+//	Schedular_Update();
 }
 /* USER CODE END 4 */
 

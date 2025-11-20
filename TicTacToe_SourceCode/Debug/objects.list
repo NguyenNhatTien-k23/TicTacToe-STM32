@@ -1,7 +1,7 @@
 "./Core/Src/Button.o"
 "./Core/Src/Computer.o"
 "./Core/Src/Display.o"
-"./Core/Src/FiniteStateMachine.o"
+"./Core/Src/Game_Master.o"
 "./Core/Src/Queue.o"
 "./Core/Src/Resource_Manager.o"
 "./Core/Src/Schedular.o"

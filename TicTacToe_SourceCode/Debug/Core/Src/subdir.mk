@@ -8,7 +8,7 @@ C_SRCS += \
 ../Core/Src/Button.c \
 ../Core/Src/Computer.c \
 ../Core/Src/Display.c \
-../Core/Src/FiniteStateMachine.c \
+../Core/Src/Game_Master.c \
 ../Core/Src/Queue.c \
 ../Core/Src/Resource_Manager.c \
 ../Core/Src/Schedular.c \
@@ -23,7 +23,7 @@ OBJS += \
 ./Core/Src/Button.o \
 ./Core/Src/Computer.o \
 ./Core/Src/Display.o \
-./Core/Src/FiniteStateMachine.o \
+./Core/Src/Game_Master.o \
 ./Core/Src/Queue.o \
 ./Core/Src/Resource_Manager.o \
 ./Core/Src/Schedular.o \
@@ -38,7 +38,7 @@ C_DEPS += \
 ./Core/Src/Button.d \
 ./Core/Src/Computer.d \
 ./Core/Src/Display.d \
-./Core/Src/FiniteStateMachine.d \
+./Core/Src/Game_Master.d \
 ./Core/Src/Queue.d \
 ./Core/Src/Resource_Manager.d \
 ./Core/Src/Schedular.d \
